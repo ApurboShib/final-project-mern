@@ -1,16 +1,132 @@
-# React + Vite
+# ProFast - Final Project (MERN)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack MERN project built with React, Vite, Tailwind CSS, and DaisyUI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## React Compiler
+| Category | Technology |
+|----------|------------|
+| Frontend | React 19, Vite 7 |
+| Styling | Tailwind CSS 4, DaisyUI 5 |
+| Routing | React Router 7 |
+| Linting | ESLint 9 |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── assets/          # Static assets (images, JSON data)
+│   ├── banner/
+│   ├── brands/
+│   └── warehouses.json
+├── layouts/         # Layout components
+│   └── RootLayouts.jsx
+├── pages/           # Page components
+│   ├── home/
+│   │   └── Home.jsx
+│   └── shared/      # Shared/reusable components
+│       ├── footer/
+│       │   └── Footer.jsx
+│       ├── Navbar/
+│       │   └── Navbar.jsx
+│       └── ProFastLogo/
+│           └── ProFastLogo.jsx
+├── router/          # App routing configuration
+│   └── router.jsx
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+```
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+pnpm install
+
+# Run development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
+```
+
+---
+
+## ✅ Progress Tracker
+
+### Completed Features
+- [x] Project setup with Vite + React
+- [x] Tailwind CSS & DaisyUI configuration
+- [x] React Router setup with RootLayout
+- [x] Navbar component (responsive with mobile menu)
+- [x] Footer component
+- [x] ProFastLogo component
+- [x] Home page structure
+- [x] Navigation links (Home, About Us)
+
+### In Progress
+- [ ] About Us page
+- [ ] Add more pages/routes
+
+### Planned Features
+- [ ] Backend API (Node.js + Express)
+- [ ] MongoDB database integration
+- [ ] User authentication
+- [ ] Product/Warehouse listing
+- [ ] CRUD operations
+- [ ] Responsive design improvements
+
+---
+
+## 📝 Development Log
+
+| Date | Task | Status |
+|------|------|--------|
+| Jan 26, 2026 | Initial project setup | ✅ Done |
+| Jan 26, 2026 | Added Tailwind & DaisyUI | ✅ Done |
+| Jan 26, 2026 | Created Navbar, Footer, Logo components | ✅ Done |
+| Jan 26, 2026 | Set up React Router with layouts | ✅ Done |
+| | | |
+
+---
+
+## 📌 Notes & Reminders
+
+- Update this README as you complete tasks
+- Add new features to the "Planned Features" section
+- Move completed items from "In Progress" to "Completed Features"
+- Log important changes in the "Development Log" table
+
+---
+
+## 🔗 Routes
+
+| Path | Component | Description |
+|------|-----------|-------------|
+| `/` | Home | Landing/Home page |
+| `/about` | About Us | About page (pending) |
+
+---
+
+## 📦 Dependencies
+
+**Production:**
+- react, react-dom
+- react-router
+- tailwindcss, @tailwindcss/vite
+
+**Development:**
+- vite, @vitejs/plugin-react
+- eslint, eslint-plugin-react-hooks, eslint-plugin-react-refresh
+- daisyui
