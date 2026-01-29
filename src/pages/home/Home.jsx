@@ -1,9 +1,12 @@
 import React from "react";
+import Banner from "./banner/Banner";
+import Services from "./services/Services";
 
 const Home = () => {
   return (
     <div>
-      <h2 className="text-sky-300">This is the home pages.</h2>
+      <Banner></Banner>
+      <Services></Services>
     </div>
   );
 };
