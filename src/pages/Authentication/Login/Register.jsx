@@ -1,9 +1,54 @@
 import React from "react";
-
+import { useForm } from "react-hook-form";
+import { NavLink } from "react-router-dom";
 const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div>
-      <h2>This is a Register page.</h2>
+      <h1>Create an Account</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <fieldset className="fieldset">
+          <label className="label">Email</label>
+          <input
+            type="email"
+            {...register("email", { required: true })}
+            className="input"
+            placeholder="Email"
+          />
+          {errors.email?.type === "required" && (
+            <p className="text-red-500">Email is required</p>
+          )}
+          <label className="label">Password</label>
+          <input
+            type="password"
+            {...register("password", { required: true, minLength: 6 })}
+            className="input"
+            placeholder="Password"
+          />
+          {errors.password?.type === "required" && (
+            <p className="text-red-500">Password is required</p>
+          )}
+          {errors.password?.type === "minLength" && (
+            <p className="text-red-500">
+              Password must be at least 6 characters
+            </p>
+          )}
+          <div>
+            <a className="text-blue-500">
+              Already have an account? <NavLink to="/login">Login</NavLink>{" "}
+            </a>
+          </div>
+        </fieldset>
+        <button className="btn btn-neutral mt-4">Register</button>
+      </form>
     </div>
   );
 };

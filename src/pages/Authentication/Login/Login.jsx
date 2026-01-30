@@ -2,7 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -26,11 +30,19 @@ const Login = () => {
             className="input"
             placeholder="Password"
           />
+          {errors.password?.type === "required" && (
+            <p className="text-red-500">Password is required</p>
+          )}
+          {errors.password?.type === "minLength" && (
+            <p className="text-red-500">
+              Password must be at least 6 characters
+            </p>
+          )}
           <div>
             <a className="link link-hover">Forgot password?</a>
           </div>
-          <button className="btn btn-neutral mt-4">Login</button>
         </fieldset>
+        <button className="btn btn-neutral mt-4">Login</button>
       </form>
     </div>
   );
