@@ -19,7 +19,7 @@ const Register = () => {
           <label className="label">Email</label>
           <input
             type="email"
-            {...register("email", { required: true })}
+            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             className="input"
             placeholder="Email"
           />
@@ -29,7 +29,11 @@ const Register = () => {
           <label className="label">Password</label>
           <input
             type="password"
-            {...register("password", { required: true, minLength: 6 })}
+            {...register("password", {
+              required: true,
+              minLength: 6,
+              pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+            })}
             className="input"
             placeholder="Password"
           />
